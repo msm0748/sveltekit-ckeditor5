@@ -62,7 +62,6 @@
 						'italic',
 						'strikethrough',
 						'fontColor',
-						'|',
 						'fontFamily',
 						'|',
 						'insertTable',
@@ -75,6 +74,44 @@
 						'indent',
 						'outdent'
 					]
+				},
+				fontFamily: {
+					options: [
+						'default',
+						'Arial, Helvetica, sans-serif',
+						'Georgia, serif',
+						{
+							title: '나눔고딕',
+							model: 'Nanum Gothic, sans-serif',
+							view: {
+								name: 'span',
+								styles: {
+									'font-family': 'Nanum Gothic, sans-serif'
+								}
+							}
+						},
+						{
+							title: '고운돋움',
+							model: 'Gowun Dodum, sans-serif',
+							view: {
+								name: 'span',
+								styles: {
+									'font-family': 'Gowun Dodum, sans-serif'
+								}
+							}
+						},
+						{
+							title: '고운바탕',
+							model: 'Gowun Batang, sans-serif',
+							view: {
+								name: 'span',
+								styles: {
+									'font-family': 'Gowun Batang, sans-serif'
+								}
+							}
+						}
+					],
+					supportAllValues: true
 				},
 				table: {
 					contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells']
