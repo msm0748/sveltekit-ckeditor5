@@ -18,7 +18,8 @@
 		ImageToolbar,
 		ImageUpload,
 		Base64UploadAdapter,
-		TodoList
+		TodoList,
+		Strikethrough
 	} from 'ckeditor5';
 
 	import 'ckeditor5/ckeditor5.css';
@@ -49,7 +50,8 @@
 					ImageToolbar,
 					ImageUpload,
 					Base64UploadAdapter,
-					TodoList
+					TodoList,
+					Strikethrough
 				],
 				toolbar: {
 					items: [
@@ -60,6 +62,7 @@
 						'|',
 						'bold',
 						'italic',
+						'strikethrough',
 						'|',
 						'fontSize',
 						'fontFamily',
