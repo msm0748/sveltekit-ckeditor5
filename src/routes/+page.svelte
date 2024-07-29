@@ -1,7 +1,6 @@
 <script lang="ts">
 	import {
 		ClassicEditor,
-		Essentials,
 		Bold,
 		Italic,
 		Font,
@@ -20,7 +19,8 @@
 		Base64UploadAdapter,
 		TodoList,
 		Strikethrough,
-		Indent
+		Indent,
+		Link
 	} from 'ckeditor5';
 
 	import 'ckeditor5/ckeditor5.css';
@@ -34,7 +34,6 @@
 			ClassicEditor.create(editorEl, {
 				plugins: [
 					List,
-					Essentials,
 					Bold,
 					Italic,
 					Font,
@@ -53,24 +52,22 @@
 					Base64UploadAdapter,
 					TodoList,
 					Strikethrough,
-					Indent
+					Indent,
+					Link
 				],
 				toolbar: {
 					items: [
 						'heading',
-						'|',
-						'undo',
-						'redo',
-						'|',
 						'bold',
 						'italic',
 						'strikethrough',
-						'|',
-						'fontFamily',
 						'fontColor',
 						'|',
-						'insertImage',
+						'fontFamily',
+						'|',
 						'insertTable',
+						'insertImage',
+						'link',
 						'|',
 						'bulletedList',
 						'numberedList',
