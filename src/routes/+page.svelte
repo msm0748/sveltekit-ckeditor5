@@ -7,6 +7,7 @@
 		Font,
 		Paragraph,
 		Heading,
+		List,
 		Table,
 		TableColumnResize,
 		TableToolbar,
@@ -16,11 +17,12 @@
 		ImageStyle,
 		ImageToolbar,
 		ImageUpload,
-		Base64UploadAdapter
+		Base64UploadAdapter,
+		TodoList
 	} from 'ckeditor5';
 
 	import 'ckeditor5/ckeditor5.css';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	let editor: ClassicEditor;
 	let editorEl: HTMLDivElement;
@@ -29,6 +31,7 @@
 		if (editorEl) {
 			ClassicEditor.create(editorEl, {
 				plugins: [
+					List,
 					Essentials,
 					Bold,
 					Italic,
@@ -45,7 +48,8 @@
 					ImageStyle,
 					ImageToolbar,
 					ImageUpload,
-					Base64UploadAdapter
+					Base64UploadAdapter,
+					TodoList
 				],
 				toolbar: {
 					items: [
@@ -63,7 +67,11 @@
 						'fontBackgroundColor',
 						'|',
 						'insertImage',
-						'insertTable'
+						'insertTable',
+						'|',
+						'bulletedList',
+						'numberedList',
+						'todoList'
 					]
 				},
 				table: {
@@ -85,6 +93,10 @@
 				})
 				.catch(/* ... */);
 		}
+	});
+
+	onDestroy(() => {
+		editor.destroy();
 	});
 </script>
 
