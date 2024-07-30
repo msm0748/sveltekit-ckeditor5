@@ -1,4 +1,5 @@
 <script lang="ts">
+	import FileUpload from '$lib/ckeditor/FileUpload';
 	import {
 		ClassicEditor,
 		Bold,
@@ -16,11 +17,13 @@
 		ImageStyle,
 		ImageToolbar,
 		ImageUpload,
+		ImageInsert,
 		TodoList,
 		Strikethrough,
 		Indent,
 		Link,
-		SimpleUploadAdapter
+		SimpleUploadAdapter,
+		Essentials
 	} from 'ckeditor5';
 
 	import 'ckeditor5/ckeditor5.css';
@@ -34,6 +37,7 @@
 			ClassicEditor.create(editorEl, {
 				plugins: [
 					List,
+					Essentials,
 					Bold,
 					Italic,
 					Font,
@@ -49,11 +53,13 @@
 					ImageStyle,
 					ImageToolbar,
 					ImageUpload,
+					ImageInsert,
 					TodoList,
 					Strikethrough,
 					Indent,
 					Link,
-					SimpleUploadAdapter
+					SimpleUploadAdapter,
+					FileUpload
 				],
 				toolbar: {
 					items: [
@@ -66,6 +72,7 @@
 						'|',
 						'insertTable',
 						'insertImage',
+						'fileUpload',
 						'link',
 						'|',
 						'bulletedList',
