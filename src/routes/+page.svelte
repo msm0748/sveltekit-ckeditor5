@@ -16,11 +16,11 @@
 		ImageStyle,
 		ImageToolbar,
 		ImageUpload,
-		Base64UploadAdapter,
 		TodoList,
 		Strikethrough,
 		Indent,
-		Link
+		Link,
+		SimpleUploadAdapter
 	} from 'ckeditor5';
 
 	import 'ckeditor5/ckeditor5.css';
@@ -49,11 +49,11 @@
 					ImageStyle,
 					ImageToolbar,
 					ImageUpload,
-					Base64UploadAdapter,
 					TodoList,
 					Strikethrough,
 					Indent,
-					Link
+					Link,
+					SimpleUploadAdapter
 				],
 				toolbar: {
 					items: [
@@ -154,6 +154,12 @@
 						'imageTextAlternative',
 						'toggleImageCaption'
 					]
+				},
+				simpleUpload: {
+					uploadUrl: '/api/upload',
+					headers: {
+						// ...
+					}
 				}
 			})
 				.then((newEditor) => {
