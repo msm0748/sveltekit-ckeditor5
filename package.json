@@ -30,6 +30,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.620.1",
+		"buffer": "^6.0.3",
 		"ckeditor5": "^42.0.2"
 	}
 }
